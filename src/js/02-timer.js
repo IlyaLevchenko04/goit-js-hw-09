@@ -1,7 +1,7 @@
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 
-console.log('hello')
+console.log('нуы')
 
 function convertMs(ms) {
     // Number of milliseconds per unit of time
