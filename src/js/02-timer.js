@@ -75,4 +75,5 @@ startBtn.addEventListener('click', ()=>{
     startBtn.setAttribute('disabled', 'true');
 });
 
+console.log('hello')
 
