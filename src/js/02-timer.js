@@ -2,7 +2,6 @@ import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 
 
-
 function convertMs(ms) {
     // Number of milliseconds per unit of time
     const second = 1000;
@@ -56,19 +55,24 @@ const options = {
             startBtn.removeAttribute('disabled');
         }
         
-        
+            
+
         const timerId = setInterval(() =>{
-            const currentDate = new Date();
+             const currentDate = new Date();
             let currentMs = Number(currentDate.getTime());
             let futureMs = selectedDates[0].getTime();
-            let msLeft = futureMs - currentMs;
+            let msLeft = Number(futureMs - currentMs);
             let convertedTime = convertMs(msLeft);
         
             tSeconds.textContent = convertedTime.seconds.toString().padStart(2,'0');
             tMinutes.textContent = convertedTime.minutes.toString().padStart(2,'0');
             tHours.textContent = convertedTime.hours.toString().padStart(2,'0');
             tDays.textContent = convertedTime.days.toString().padStart(2,'0');
+            if (futureMs - currentMs <= 1000){
+                clearInterval(timerId);
+            }
         }, 1000);
+        
     },
   };
 flatpickr('input[type="text"]', options);
@@ -76,6 +80,3 @@ flatpickr('input[type="text"]', options);
 startBtn.addEventListener('click', ()=>{
     startBtn.setAttribute('disabled', 'true');
 });
-
-
-
