@@ -28,7 +28,7 @@ const startBtn = document.querySelector('button[data-start]');
 const input = document.querySelector('input');
 
  startBtn.setAttribute('disabled', 'true');
-
+console.log('hello')
 
 
 
@@ -75,5 +75,5 @@ startBtn.addEventListener('click', ()=>{
     startBtn.setAttribute('disabled', 'true');
 });
 
-console.log('hello')
+
 
