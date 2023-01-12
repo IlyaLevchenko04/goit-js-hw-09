@@ -16,4 +16,3 @@ const amountInput = document.getElementsByName('amount');
 console.log(delayInput);
 console.log(stepInput);
 console.log(amountInput);
-console.log('hello');
